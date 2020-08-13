@@ -150,6 +150,11 @@ body {
     font-weight: 300;
   }
 
+  .doodle {
+    position: fixed;
+    z-index: -1;
+}
+
 
 
 

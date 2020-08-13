@@ -6,6 +6,30 @@
 <link href="https://unpkg.com/pattern.css" rel="stylesheet">
 </head>
 <body>
+    <css-doodle grid="5" class="doodle">
+        :doodle {
+            @grid: 10 / 100vmax;
+        }
+        background: @pick(#4A4150, #292C47, #9680A4, #3E465C, #626B85, #536B89, #454D63, #BAA2DC);
+        opacity: @r(.9);
+        clip-path: polygon(
+            @rand(50%) 0, 50% @rand(70%), 0 @rand(100%)
+        );
+        
+        animation: test infinite @r(100s, 150s) linear;
+        
+        @keyframes test {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                transform: translate3d(@r(-500%, 1000%), @r(-500%, 1000%), 0);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </css-doodle>
     <div class="container">
         <div class="header">
             <h1>EL IMPACTO DEL FRACKING</h1>
@@ -94,3 +118,5 @@
       </div>    
 </body>
 </html>
+
+<script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
